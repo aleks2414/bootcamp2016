@@ -1,0 +1,33 @@
+<%= form_for(@fourth_test) do |f| %>
+  <% if @fourth_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fourth_test.errors.count, "error") %> prohibited this fourth_test from being saved:</h2>
+
+      <ul>
+      <% @fourth_test.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :video %><br>
+    <%= f.text_field :video %>
+  </div>
+  <div class="field">
+    <%= f.label :likes2 %><br>
+    <%= f.number_field :likes2 %>
+  </div>
+  <div class="field">
+    <%= f.label :aprendizajes2 %><br>
+    <%= f.text_field :aprendizajes2 %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

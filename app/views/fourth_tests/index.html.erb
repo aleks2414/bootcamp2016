@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fourth Tests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Likes2</th>
+      <th>Aprendizajes2</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fourth_tests.each do |fourth_test| %>
+      <tr>
+        <td><%= fourth_test.video %></td>
+        <td><%= fourth_test.likes2 %></td>
+        <td><%= fourth_test.aprendizajes2 %></td>
+        <td><%= fourth_test.user %></td>
+        <td><%= link_to 'Show', fourth_test %></td>
+        <td><%= link_to 'Edit', edit_fourth_test_path(fourth_test) %></td>
+        <td><%= link_to 'Destroy', fourth_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fourth test', new_fourth_test_path %>
