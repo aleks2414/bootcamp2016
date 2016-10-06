@@ -14,6 +14,7 @@
   <% @user.first_tests.each do |first_test| %>
   	<%= first_test.info1 %>
   	<%= link_to "Edit Status", edit_user_first_test_path(@user, first_test) %>
+    <%= link_to "Show", user_first_test_path(@user, first_test) %>
 <% end %>
 <% end %>
 
@@ -24,6 +25,7 @@
   <% @user.second_tests.each do |second_test| %>
   	<%= second_test.boceto %>
   	<%= link_to "Edit Status", edit_user_second_test_path(@user, second_test) %>
+    <%= link_to "Show", user_second_test_path(@user, second_test) %>
 <% end %>
 <% end %>
 
@@ -37,6 +39,7 @@
     <%= third_test.likes1 %>
     <%= third_test.aprendizajes1 %>
   	<%= link_to "Edit Status", edit_user_third_test_path(@user, third_test) %>
+    <%= link_to "Show", user_third_test_path(@user, third_test) %>
 <% end %>
 <% end %>
 
@@ -50,6 +53,7 @@
     <%= fourth_test.likes2 %>
     <%= fourth_test.aprendizajes2 %>
   	<%= link_to "Edit Status", edit_user_fourth_test_path(@user, fourth_test) %>
+    <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
 <% end %>
 <% end %>
 
