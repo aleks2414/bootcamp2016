@@ -1,5 +1,7 @@
 class SecondTestsController < ApplicationController
   before_action :set_second_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
+  before_action :authenticate_user!
 
   # GET /second_tests
   # GET /second_tests.json
@@ -26,16 +28,12 @@ class SecondTestsController < ApplicationController
   # POST /second_tests.json
   def create
     @second_test = SecondTest.new(second_test_params)
-    @second_test.user = current_user
+    @second_test.user_id=current_user.id
 
-    respond_to do |format|
-      if @second_test.save
-        format.html { redirect_to @second_test, notice: 'Second test was successfully created.' }
-        format.json { render :show, status: :created, location: @second_test }
-      else
-        format.html { render :new }
-        format.json { render json: @second_test.errors, status: :unprocessable_entity }
-      end
+    if @second_test.save
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 
@@ -44,8 +42,8 @@ class SecondTestsController < ApplicationController
   def update
     respond_to do |format|
       if @second_test.update(second_test_params)
-        format.html { redirect_to @second_test, notice: 'Second test was successfully updated.' }
-        format.json { render :show, status: :ok, location: @second_test }
+        format.html { redirect_to @user, notice: 'Second test was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @second_test.errors, status: :unprocessable_entity }
@@ -67,6 +65,9 @@ class SecondTestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_second_test
       @second_test = SecondTest.find(params[:id])
+    end
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -17,6 +17,43 @@
 <% end %>
 <% end %>
 
+<% if @user.second_tests.blank? %>
+  <h3>Aún no hay Segunda prueba</h3>
+    <%= link_to "Nueva Segunda Prueba", new_user_second_test_path(@user) %>
+<% else %>
+  <% @user.second_tests.each do |second_test| %>
+  	<%= second_test.boceto %>
+  	<%= link_to "Edit Status", edit_user_second_test_path(@user, second_test) %>
+<% end %>
+<% end %>
+
+
+<% if @user.third_tests.blank? %>
+  <h3>Aún no hay Tercera prueba</h3>
+    <%= link_to "Nueva Tercera Prueba", new_user_third_test_path(@user) %>
+<% else %>
+  <% @user.third_tests.each do |third_test| %>
+  	<%= third_test.info2 %>
+    <%= third_test.likes1 %>
+    <%= third_test.aprendizajes1 %>
+  	<%= link_to "Edit Status", edit_user_third_test_path(@user, third_test) %>
+<% end %>
+<% end %>
+
+
+<% if @user.fourth_tests.blank? %>
+  <h3>Aún no hay Cuarta prueba</h3>
+    <%= link_to "Nueva Cuarta Prueba", new_user_fourth_test_path(@user) %>
+<% else %>
+  <% @user.fourth_tests.each do |fourth_test| %>
+  	<%= fourth_test.video %>
+    <%= fourth_test.likes2 %>
+    <%= fourth_test.aprendizajes2 %>
+  	<%= link_to "Edit Status", edit_user_fourth_test_path(@user, fourth_test) %>
+<% end %>
+<% end %>
+
+
 
 <br><br><br>
 <%= link_to 'Edit', edit_user_path(@user) %> |

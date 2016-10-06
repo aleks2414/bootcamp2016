@@ -16,7 +16,7 @@
       <tr>
         <td><%= second_test.boceto %></td>
         <td><%= second_test.user %></td>
-        <td><%= link_to 'Show', second_test %></td>
+        <td><%= link_to 'Show', second_test(@second_test) %></td>
         <td><%= link_to 'Edit', edit_second_test_path(second_test) %></td>
         <td><%= link_to 'Destroy', second_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

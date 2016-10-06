@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @users = User.all.includes(:first_tests)
+    @users = User.all.includes(:first_tests, :second_tests, :third_tests, :fourth_tests)
   end
 
   # GET /users/new

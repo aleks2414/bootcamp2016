@@ -1,4 +1,4 @@
-<%= form_for(@third_test) do |f| %>
+<%= form_for([@user, @third_test]) do |f| %>
   <% if @third_test.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@third_test.errors.count, "error") %> prohibited this third_test from being saved:</h2>
@@ -22,10 +22,6 @@
   <div class="field">
     <%= f.label :aprendizajes1 %><br>
     <%= f.text_field :aprendizajes1 %>
-  </div>
-  <div class="field">
-    <%= f.label :string %><br>
-    <%= f.text_field :string %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>

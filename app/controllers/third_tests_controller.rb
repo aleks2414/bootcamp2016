@@ -1,5 +1,7 @@
 class ThirdTestsController < ApplicationController
   before_action :set_third_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
+  before_action :authenticate_user!
 
   # GET /third_tests
   # GET /third_tests.json
@@ -26,16 +28,12 @@ class ThirdTestsController < ApplicationController
   # POST /third_tests.json
   def create
     @third_test = ThirdTest.new(third_test_params)
-    @second_test.user = current_user
+    @third_test.user_id=current_user.id
 
-    respond_to do |format|
-      if @third_test.save
-        format.html { redirect_to @third_test, notice: 'Third test was successfully created.' }
-        format.json { render :show, status: :created, location: @third_test }
-      else
-        format.html { render :new }
-        format.json { render json: @third_test.errors, status: :unprocessable_entity }
-      end
+    if @third_test.save
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 
@@ -44,8 +42,8 @@ class ThirdTestsController < ApplicationController
   def update
     respond_to do |format|
       if @third_test.update(third_test_params)
-        format.html { redirect_to @third_test, notice: 'Third test was successfully updated.' }
-        format.json { render :show, status: :ok, location: @third_test }
+        format.html { redirect_to @user, notice: 'Third test was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @third_test.errors, status: :unprocessable_entity }
@@ -67,6 +65,9 @@ class ThirdTestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_third_test
       @third_test = ThirdTest.find(params[:id])
+    end
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

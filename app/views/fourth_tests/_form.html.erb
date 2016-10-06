@@ -1,4 +1,4 @@
-<%= form_for(@fourth_test) do |f| %>
+<%= form_for([@user, @fourth_test]) do |f| %>
   <% if @fourth_test.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@fourth_test.errors.count, "error") %> prohibited this fourth_test from being saved:</h2>

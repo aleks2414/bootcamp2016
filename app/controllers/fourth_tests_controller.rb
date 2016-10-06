@@ -1,5 +1,7 @@
 class FourthTestsController < ApplicationController
   before_action :set_fourth_test, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
+  before_action :authenticate_user!
 
   # GET /fourth_tests
   # GET /fourth_tests.json
@@ -26,16 +28,12 @@ class FourthTestsController < ApplicationController
   # POST /fourth_tests.json
   def create
     @fourth_test = FourthTest.new(fourth_test_params)
-    @fourth_test.user = current_user
+    @fourth_test.user_id = current_user.id
 
-    respond_to do |format|
-      if @fourth_test.save
-        format.html { redirect_to @fourth_test, notice: 'Fourth test was successfully created.' }
-        format.json { render :show, status: :created, location: @fourth_test }
-      else
-        format.html { render :new }
-        format.json { render json: @fourth_test.errors, status: :unprocessable_entity }
-      end
+    if @fourth_test.save
+      redirect_to @user
+    else
+      render 'new'
     end
   end
 
@@ -44,8 +42,8 @@ class FourthTestsController < ApplicationController
   def update
     respond_to do |format|
       if @fourth_test.update(fourth_test_params)
-        format.html { redirect_to @fourth_test, notice: 'Fourth test was successfully updated.' }
-        format.json { render :show, status: :ok, location: @fourth_test }
+        format.html { redirect_to @user, notice: 'Fourth test was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
         format.json { render json: @fourth_test.errors, status: :unprocessable_entity }
@@ -67,6 +65,10 @@ class FourthTestsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_fourth_test
       @fourth_test = FourthTest.find(params[:id])
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
