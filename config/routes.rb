@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :fourth_tests do
+      resources :fourth_reviews
       resources :sixth_reviews
       resources :fifth_reviews
-      resources :fouth_reviews
-    end
+        end
     resources :third_tests do 
       resources :third_reviews
     end

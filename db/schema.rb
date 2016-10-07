@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006205116) do
+ActiveRecord::Schema.define(version: 20161007173640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,19 @@ ActiveRecord::Schema.define(version: 20161006205116) do
   end
 
   add_index "first_tests", ["user_id"], name: "index_first_tests_on_user_id", using: :btree
+
+  create_table "fourth_reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "fourth_test_id"
+    t.integer  "video"
+    t.integer  "likes2"
+    t.integer  "aprendizaje2"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "fourth_reviews", ["fourth_test_id"], name: "index_fourth_reviews_on_fourth_test_id", using: :btree
+  add_index "fourth_reviews", ["user_id"], name: "index_fourth_reviews_on_user_id", using: :btree
 
   create_table "fourth_tests", force: :cascade do |t|
     t.string   "video"
@@ -164,6 +177,8 @@ ActiveRecord::Schema.define(version: 20161006205116) do
   add_foreign_key "first_reviews", "first_tests"
   add_foreign_key "first_reviews", "users"
   add_foreign_key "first_tests", "users"
+  add_foreign_key "fourth_reviews", "fourth_tests"
+  add_foreign_key "fourth_reviews", "users"
   add_foreign_key "fourth_tests", "users"
   add_foreign_key "fouth_reviews", "fourth_tests"
   add_foreign_key "fouth_reviews", "users"

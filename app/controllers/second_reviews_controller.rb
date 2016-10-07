@@ -1,5 +1,9 @@
 class SecondReviewsController < ApplicationController
   before_action :set_second_review, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  # before_action :filter_admin!
+  before_action :set_second_test
+  before_action :set_user
 
   # GET /second_reviews
   # GET /second_reviews.json
@@ -25,15 +29,13 @@ class SecondReviewsController < ApplicationController
   # POST /second_reviews.json
   def create
     @second_review = SecondReview.new(second_review_params)
+    @second_test.user_id=current_user.id
+    @second_review.second_test_id=@second_test.id
 
-    respond_to do |format|
-      if @second_review.save
-        format.html { redirect_to @second_review, notice: 'Second review was successfully created.' }
-        format.json { render :show, status: :created, location: @second_review }
-      else
-        format.html { render :new }
-        format.json { render json: @second_review.errors, status: :unprocessable_entity }
-      end
+    if @second_review.save
+      redirect_to user_path(@user)
+    else
+      render 'new'
     end
   end
 
@@ -42,8 +44,8 @@ class SecondReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @second_review.update(second_review_params)
-        format.html { redirect_to @second_review, notice: 'Second review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @second_review }
+        format.html { redirect_to @users, notice: 'Second review was successfully updated.' }
+        format.json { render :show, status: :ok, location: @users }
       else
         format.html { render :edit }
         format.json { render json: @second_review.errors, status: :unprocessable_entity }
@@ -65,6 +67,14 @@ class SecondReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_second_review
       @second_review = SecondReview.find(params[:id])
+    end
+
+    def set_second_test
+      @second_test = SecondTest.find(params[:second_test_id])
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

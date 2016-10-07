@@ -1,6 +1,6 @@
-class CreateFouthReviews < ActiveRecord::Migration
+class CreateFourthReviews < ActiveRecord::Migration
   def change
-    create_table :fouth_reviews do |t|
+    create_table :fourth_reviews do |t|
       t.references :user, index: true, foreign_key: true
       t.references :fourth_test, index: true, foreign_key: true
       t.integer :video

@@ -1,10 +1,10 @@
-<%= form_for(@fouth_review) do |f| %>
-  <% if @fouth_review.errors.any? %>
+<%= form_for([@user, @fourth_test, @fourth_review]) do |f| %>
+  <% if @fourth_review.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@fouth_review.errors.count, "error") %> prohibited this fouth_review from being saved:</h2>
+      <h2><%= pluralize(@fourth_review.errors.count, "error") %> prohibited this fourth_review from being saved:</h2>
 
       <ul>
-      <% @fouth_review.errors.full_messages.each do |message| %>
+      <% @fourth_review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

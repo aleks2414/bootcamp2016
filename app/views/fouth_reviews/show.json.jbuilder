@@ -1,1 +1,0 @@
-json.partial! "fouth_reviews/fouth_review", fouth_review: @fouth_review

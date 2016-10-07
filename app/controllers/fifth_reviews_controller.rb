@@ -1,5 +1,9 @@
 class FifthReviewsController < ApplicationController
   before_action :set_fifth_review, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  # before_action :filter_admin!
+  before_action :set_fourth_test
+  before_action :set_user
 
   # GET /fifth_reviews
   # GET /fifth_reviews.json
@@ -25,15 +29,13 @@ class FifthReviewsController < ApplicationController
   # POST /fifth_reviews.json
   def create
     @fifth_review = FifthReview.new(fifth_review_params)
+    @fourth_test.user_id=current_user.id
+    @fifth_review.fourth_test_id=@fourth_test.id
 
-    respond_to do |format|
-      if @fifth_review.save
-        format.html { redirect_to @fifth_review, notice: 'Fifth review was successfully created.' }
-        format.json { render :show, status: :created, location: @fifth_review }
-      else
-        format.html { render :new }
-        format.json { render json: @fifth_review.errors, status: :unprocessable_entity }
-      end
+    if @fifth_review.save
+      redirect_to user_path(@user)
+    else
+      render 'new'
     end
   end
 
@@ -42,8 +44,8 @@ class FifthReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @fifth_review.update(fifth_review_params)
-        format.html { redirect_to @fifth_review, notice: 'Fifth review was successfully updated.' }
-        format.json { render :show, status: :ok, location: @fifth_review }
+        format.html { redirect_to @users, notice: 'Fifth review was successfully updated.' }
+        format.json { render :show, status: :ok, location: @users }
       else
         format.html { render :edit }
         format.json { render json: @fifth_review.errors, status: :unprocessable_entity }
@@ -65,6 +67,13 @@ class FifthReviewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_fifth_review
       @fifth_review = FifthReview.find(params[:id])
+    end
+
+    def set_fouth_test
+      @fourth_test = FourthTest.find(params[:fourth_test_id])
+    ourth
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
