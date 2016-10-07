@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @first_review.user %>
+</p>
+
+<p>
+  <strong>First test:</strong>
+  <%= @first_review.first_test %>
+</p>
+
+<p>
+  <strong>Info1:</strong>
+  <%= @first_review.info1 %>
+</p>
+
+<%= link_to 'Edit', edit_first_review_path(@first_review) %> |
+<%= link_to 'Back', first_reviews_path %>

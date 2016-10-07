@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Third Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Third test</th>
+      <th>Info2</th>
+      <th>Likes1</th>
+      <th>Aprendizaje1</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @third_reviews.each do |third_review| %>
+      <tr>
+        <td><%= third_review.user %></td>
+        <td><%= third_review.third_test %></td>
+        <td><%= third_review.info2 %></td>
+        <td><%= third_review.likes1 %></td>
+        <td><%= third_review.aprendizaje1 %></td>
+        <td><%= link_to 'Show', third_review %></td>
+        <td><%= link_to 'Edit', edit_third_review_path(third_review) %></td>
+        <td><%= link_to 'Destroy', third_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Third review', new_third_review_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fifth Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Fourth test</th>
+      <th>Problem2</th>
+      <th>Cliente2</th>
+      <th>Propuesta2</th>
+      <th>Ventajas2</th>
+      <th>Monetizacion2</th>
+      <th>Comunicacion2</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fifth_reviews.each do |fifth_review| %>
+      <tr>
+        <td><%= fifth_review.user %></td>
+        <td><%= fifth_review.fourth_test %></td>
+        <td><%= fifth_review.problem2 %></td>
+        <td><%= fifth_review.cliente2 %></td>
+        <td><%= fifth_review.propuesta2 %></td>
+        <td><%= fifth_review.ventajas2 %></td>
+        <td><%= fifth_review.monetizacion2 %></td>
+        <td><%= fifth_review.comunicacion2 %></td>
+        <td><%= link_to 'Show', fifth_review %></td>
+        <td><%= link_to 'Edit', edit_fifth_review_path(fifth_review) %></td>
+        <td><%= link_to 'Destroy', fifth_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fifth review', new_fifth_review_path %>

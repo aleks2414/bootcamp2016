@@ -1,0 +1,49 @@
+<%= form_for(@sixth_review) do |f| %>
+  <% if @sixth_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sixth_review.errors.count, "error") %> prohibited this sixth_review from being saved:</h2>
+
+      <ul>
+      <% @sixth_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :fourth_test_id %><br>
+    <%= f.text_field :fourth_test_id %>
+  </div>
+  <div class="field">
+    <%= f.label :problem3 %><br>
+    <%= f.number_field :problem3 %>
+  </div>
+  <div class="field">
+    <%= f.label :cliente3 %><br>
+    <%= f.number_field :cliente3 %>
+  </div>
+  <div class="field">
+    <%= f.label :propuesta3 %><br>
+    <%= f.number_field :propuesta3 %>
+  </div>
+  <div class="field">
+    <%= f.label :ventajas3 %><br>
+    <%= f.number_field :ventajas3 %>
+  </div>
+  <div class="field">
+    <%= f.label :monetizacion3 %><br>
+    <%= f.number_field :monetizacion3 %>
+  </div>
+  <div class="field">
+    <%= f.label :comunicacion3 %><br>
+    <%= f.number_field :comunicacion3 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

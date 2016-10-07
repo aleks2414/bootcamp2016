@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @second_review.user %>
+</p>
+
+<p>
+  <strong>Second test:</strong>
+  <%= @second_review.second_test %>
+</p>
+
+<p>
+  <strong>Problema1:</strong>
+  <%= @second_review.problema1 %>
+</p>
+
+<p>
+  <strong>Cliente1:</strong>
+  <%= @second_review.cliente1 %>
+</p>
+
+<p>
+  <strong>Alternativa1:</strong>
+  <%= @second_review.alternativa1 %>
+</p>
+
+<p>
+  <strong>Solucion1:</strong>
+  <%= @second_review.solucion1 %>
+</p>
+
+<p>
+  <strong>Ventajas1:</strong>
+  <%= @second_review.ventajas1 %>
+</p>
+
+<%= link_to 'Edit', edit_second_review_path(@second_review) %> |
+<%= link_to 'Back', second_reviews_path %>

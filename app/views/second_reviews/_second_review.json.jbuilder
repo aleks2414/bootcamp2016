@@ -1,0 +1,2 @@
+json.extract! second_review, :id, :user_id, :second_test_id, :problema1, :cliente1, :alternativa1, :solucion1, :ventajas1, :created_at, :updated_at
+json.url second_review_url(second_review, format: :json)

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  fourth_test_id: 
+  problem2: 1
+  cliente2: 1
+  propuesta2: 1
+  ventajas2: 1
+  monetizacion2: 1
+  comunicacion2: 1
+
+two:
+  user_id: 
+  fourth_test_id: 
+  problem2: 1
+  cliente2: 1
+  propuesta2: 1
+  ventajas2: 1
+  monetizacion2: 1
+  comunicacion2: 1

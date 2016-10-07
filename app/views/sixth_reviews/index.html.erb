@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sixth Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Fourth test</th>
+      <th>Problem3</th>
+      <th>Cliente3</th>
+      <th>Propuesta3</th>
+      <th>Ventajas3</th>
+      <th>Monetizacion3</th>
+      <th>Comunicacion3</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sixth_reviews.each do |sixth_review| %>
+      <tr>
+        <td><%= sixth_review.user %></td>
+        <td><%= sixth_review.fourth_test %></td>
+        <td><%= sixth_review.problem3 %></td>
+        <td><%= sixth_review.cliente3 %></td>
+        <td><%= sixth_review.propuesta3 %></td>
+        <td><%= sixth_review.ventajas3 %></td>
+        <td><%= sixth_review.monetizacion3 %></td>
+        <td><%= sixth_review.comunicacion3 %></td>
+        <td><%= link_to 'Show', sixth_review %></td>
+        <td><%= link_to 'Edit', edit_sixth_review_path(sixth_review) %></td>
+        <td><%= link_to 'Destroy', sixth_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sixth review', new_sixth_review_path %>

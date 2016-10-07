@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  second_test_id: 
+  problema1: 1
+  cliente1: 1
+  alternativa1: 1
+  solucion1: 1
+  ventajas1: 1
+
+two:
+  user_id: 
+  second_test_id: 
+  problema1: 1
+  cliente1: 1
+  alternativa1: 1
+  solucion1: 1
+  ventajas1: 1

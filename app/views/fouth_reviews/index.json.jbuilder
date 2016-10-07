@@ -1,0 +1,1 @@
+json.array! @fouth_reviews, partial: 'fouth_reviews/fouth_review', as: :fouth_review

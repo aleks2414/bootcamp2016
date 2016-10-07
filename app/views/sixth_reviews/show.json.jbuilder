@@ -1,0 +1,1 @@
+json.partial! "sixth_reviews/sixth_review", sixth_review: @sixth_review

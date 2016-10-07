@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  third_test_id: 
+  info2: 1
+  likes1: 1
+  aprendizaje1: 1
+
+two:
+  user_id: 
+  third_test_id: 
+  info2: 1
+  likes1: 1
+  aprendizaje1: 1

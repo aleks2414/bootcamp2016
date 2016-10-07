@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,10 +8,20 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users do
-    resources :fourth_tests
-    resources :third_tests
-    resources :second_tests
-    resources :first_tests
+    resources :fourth_tests do
+      resources :sixth_reviews
+      resources :fifth_reviews
+      resources :fouth_reviews
+    end
+    resources :third_tests do 
+      resources :third_reviews
+    end
+    resources :second_tests do
+      resources :second_reviews
+    end
+    resources :first_tests do
+      resources :first_reviews
+    end
   end
 
   # Example of regular route:

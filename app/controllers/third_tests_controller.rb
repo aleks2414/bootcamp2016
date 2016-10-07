@@ -31,7 +31,7 @@ class ThirdTestsController < ApplicationController
     @third_test.user_id=current_user.id
 
     if @third_test.save
-      redirect_to @user
+      redirect_to user_path(@user)
     else
       render 'new'
     end

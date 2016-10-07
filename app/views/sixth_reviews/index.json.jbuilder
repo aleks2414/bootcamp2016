@@ -1,0 +1,1 @@
+json.array! @sixth_reviews, partial: 'sixth_reviews/sixth_review', as: :sixth_review
