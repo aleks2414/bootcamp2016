@@ -12,36 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fourth_test_id %><br>
-    <%= f.text_field :fourth_test_id %>
-  </div>
-  <div class="field">
     <%= f.label :problem2 %><br>
-    <%= f.number_field :problem2 %>
+  <%= f.select :problem2, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="field">
     <%= f.label :cliente2 %><br>
-    <%= f.number_field :cliente2 %>
+    <%= f.select :cliente2, [["Está claro quién es el cliente y quién es el usuario y es fácil identificar por qué ellos tienen el problema/oportunidad", 5], ["La descripción del cliente y/o usuario es muy general y es difícil de entender por qué tienen ellos el problema/oportunidad", 3], ["No está claro el cliente y/o usuario", 0]]%>
   </div>
   <div class="field">
     <%= f.label :propuesta2 %><br>
-    <%= f.number_field :propuesta2 %>
+    <%= f.select :propuesta2, [["Describe de forma clara la solución, diciendo si es un producto o un servicio ", 5], ["Habla de la solución de forma genérica, no se entiende del todo de qué se trata", 3], ["No se entiende la solución planteada", 0]]%>
   </div>
   <div class="field">
     <%= f.label :ventajas2 %><br>
-    <%= f.number_field :ventajas2 %>
+<%= f.select :ventajas2, [["Las ventajas competitivas que proponen son relevantes y difíciles de copiar", 5], ["Las ventajas competitivas no son tan relevantes o son fáciles de copiar", 3], ["No demuestra ventajas competitivas que sean relevantes y cualquiera podría copiarlas", 0]]%>
   </div>
   <div class="field">
     <%= f.label :monetizacion2 %><br>
-    <%= f.number_field :monetizacion2 %>
+    <%= f.select :monetizacion2, [["El modelo de monetización es claro y propicia el escalamiento ", 5], ["El modelo de monetización no es claro o no propicia el escalamiento", 3], ["No habla del modelo de monetización", 0]]%>
   </div>
   <div class="field">
     <%= f.label :comunicacion2 %><br>
-    <%= f.number_field :comunicacion2 %>
+    <%= f.select :comunicacion2, [["El video está claro, convence y mueve a la acción", 5], ["El video está claro pero no convence ni mueve a la acción", 3], ["El video no está claro y no mueve ni llama a la acción", 0]]%>
   </div>
   <div class="actions">
     <%= f.submit %>

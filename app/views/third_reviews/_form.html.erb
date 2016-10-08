@@ -12,24 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :third_test_id %><br>
-    <%= f.text_field :third_test_id %>
-  </div>
-  <div class="field">
     <%= f.label :info2 %><br>
-    <%= f.number_field :info2 %>
+    <!-- <%#= f.number_field :info2 %> -->
+    <%= f.select :info2, [["La infografía expone de manera creativa y clara la propuesta de solución. Se nota el problema/oportunidad que está atendiendo y las ventajas competitivas son claras y diferenciadoras.", 15], ["La infografía expone de manera simple la solución. Las ventajas competitivas no están claras del todo claras y el problema/oportunidad atendido es confuso.", 10], ["La infografía expone la solución sin dejar ver las ventajas competitivas ni el problema/oportunidad atendido.", 0]]%>
   </div>
   <div class="field">
     <%= f.label :likes1 %><br>
-    <%= f.number_field :likes1 %>
+    <!-- <%#= f.number_field :likes1 %> -->
+    <%= f.select :likes1, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="field">
     <%= f.label :aprendizaje1 %><br>
-    <%= f.number_field :aprendizaje1 %>
+    <!-- <%#= f.number_field :aprendizaje1 %> -->
+    <%= f.select :aprendizaje1, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="actions">
     <%= f.submit %>

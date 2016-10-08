@@ -12,24 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :fourth_test_id %><br>
-    <%= f.text_field :fourth_test_id %>
-  </div>
-  <div class="field">
     <%= f.label :video %><br>
-    <%= f.number_field :video %>
+    <!-- <%#= f.number_field :video %> -->
+    <%= f.select :video, [["Entregó en tiempo y dura dos minutos o menos", 10], ["Sólo una de las dos: entregó en tiempo y dura dos minutos o menos", 5], ["No entregó en tiempo y no dura dos minutos o menos", 0]]%>
   </div>
   <div class="field">
     <%= f.label :likes2 %><br>
-    <%= f.number_field :likes2 %>
+    <!-- <%#= f.number_field :likes2 %> -->
+    <%= f.select :likes2, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="field">
     <%= f.label :aprendizaje2 %><br>
-    <%= f.number_field :aprendizaje2 %>
+    <!-- <%#= f.number_field :aprendizaje2 %> -->
+    <%= f.select :aprendizaje2, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="actions">
     <%= f.submit %>
