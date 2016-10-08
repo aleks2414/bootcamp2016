@@ -13,6 +13,16 @@ class ThirdTestsController < ApplicationController
   # GET /third_tests/1
   # GET /third_tests/1.json
   def show
+    if @third_test.third_reviews.blank?
+      @avg_info2=0
+      @avg_likes1=0
+      @avg_aprendizaje1=0
+    else
+      @avg_info2=@third_test.third_reviews.average(:info2).round(2)
+      @avg_likes1=@third_test.third_reviews.average(:likes1).round(2)
+      @avg_aprendizaje1=@third_test.third_reviews.average(:aprendizaje1).round(2)
+
+    end
   end
 
   # GET /third_tests/new

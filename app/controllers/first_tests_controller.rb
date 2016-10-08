@@ -13,6 +13,11 @@ class FirstTestsController < ApplicationController
   # GET /first_tests/1
   # GET /first_tests/1.json
   def show
+    if @first_test.first_reviews.blank?
+      @avg_info=0
+    else
+      @avg_info=@first_test.first_reviews.average(:info1).round(2)
+    end
   end
 
   # GET /first_tests/new
@@ -42,8 +47,8 @@ class FirstTestsController < ApplicationController
   def update
     respond_to do |format|
       if @first_test.update(first_test_params)
-        format.html { redirect_to @user, notice: 'First test was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.html { redirect_to users_path(@user), notice: 'First test was successfully updated.' }
+        format.json { render :show, status: :ok, location: users_path(@user) }
       else
         format.html { render :edit }
         format.json { render json: @first_test.errors, status: :unprocessable_entity }

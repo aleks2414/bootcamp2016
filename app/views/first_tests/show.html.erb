@@ -10,5 +10,23 @@
   <%= @first_test.user %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>problema</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@avg_info%></td>
+    </tr>
+  </tbody>
+  <em><%= "#{@first_test.first_reviews.length} calificaciones promediadas" %></em>
+</table><br><br>
+
+<%= link_to "Escribir nueva calificación", new_user_first_test_first_review_path(@user, @first_test) %>
+
 <%= link_to "Edit Status", edit_user_first_test_path(@user, @first_test) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', user_path(@user) %>

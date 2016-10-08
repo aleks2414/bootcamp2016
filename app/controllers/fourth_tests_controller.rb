@@ -13,6 +13,48 @@ class FourthTestsController < ApplicationController
   # GET /fourth_tests/1
   # GET /fourth_tests/1.json
   def show
+    if @fourth_test.fourth_reviews.blank?
+      @avg_video=0
+      @avg_likes2=0
+      @avg_aprendizaje2=0
+    else
+      @avg_video=@fourth_test.fourth_reviews.average(:video).round(2)
+      @avg_likes2=@fourth_test.fourth_reviews.average(:likes2).round(2)
+      @avg_aprendizaje2=@fourth_test.fourth_reviews.average(:aprendizaje2).round(2)
+    end
+
+    if @fourth_test.fifth_reviews.blank?
+      @avg_problem2=0
+      @avg_cliente2=0
+      @avg_propuesta2=0
+      @avg_ventajas2=0
+      @avg_monetizacion2=0
+      @avg_comunicacion2=0
+    else
+      @avg_problem2=@fourth_test.fifth_reviews.average(:problem2).round(2)
+      @avg_cliente2=@fourth_test.fifth_reviews.average(:cliente2).round(2)
+      @avg_propuesta2=@fourth_test.fifth_reviews.average(:propuesta2).round(2)
+      @avg_ventajas2=@fourth_test.fifth_reviews.average(:ventajas2).round(2)
+      @avg_monetizacion2=@fourth_test.fifth_reviews.average(:monetizacion2).round(2)
+      @avg_comunicacion2=@fourth_test.fifth_reviews.average(:comunicacion2).round(2)
+    end
+
+    if @fourth_test.sixth_reviews.blank?
+      @avg_problem3=0
+      @avg_cliente3=0
+      @avg_propuesta3=0
+      @avg_ventajas3=0
+      @avg_monetizacion3=0
+      @avg_comunicacion3=0
+    else
+      @avg_problem3=@fourth_test.sixth_reviews.average(:problem3).round(2)
+      @avg_cliente3=@fourth_test.sixth_reviews.average(:cliente3).round(2)
+      @avg_propuesta3=@fourth_test.sixth_reviews.average(:propuesta3).round(2)
+      @avg_ventajas3=@fourth_test.sixth_reviews.average(:ventajas3).round(2)
+      @avg_monetizacion3=@fourth_test.sixth_reviews.average(:monetizacion3).round(2)
+      @avg_comunicacion3=@fourth_test.sixth_reviews.average(:comunicacion3).round(2)
+    end
+
   end
 
   # GET /fourth_tests/new

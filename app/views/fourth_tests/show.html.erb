@@ -15,10 +15,96 @@
   <%= @fourth_test.aprendizajes2 %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Video</th>
+      <th>Likes en Facebook</th>
+      <th>Aprendizajes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@avg_video%></td>
+      <td><%=@avg_likes2%></td>
+      <td><%=@avg_aprendizaje2%></td>
+    </tr>
+  </tbody>
+  <em><%= "#{@fourth_test.fourth_reviews.length} calificaciones promediadas" %></em>
+</table><br>
+
+
+<%= link_to "Escribir nueva calificación", new_user_fourth_test_fourth_review_path(@user, @fourth_test) %>
+
 <p>
-  <strong>User:</strong>
-  <%= @fourth_test.user %>
+  <strong>Video:</strong>
+  <%= @fourth_test.video %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Problema</th>
+      <th>Cliente</th>
+      <th>Propuesta</th>
+      <th>Ventajas</th>
+      <th>Monetización</th>
+      <th>Comunicación</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@avg_problem2%></td>
+      <td><%=@avg_cliente2%></td>
+      <td><%=@avg_propuesta2%></td>
+      <td><%=@avg_ventajas2%></td>
+      <td><%=@avg_monetizacion2%></td>
+      <td><%=@avg_comunicacion2%></td>
+    </tr>
+  </tbody>
+  <em><%= "#{@fourth_test.fifth_reviews.length} calificaciones promediadas" %></em>
+</table><br>
+
+
+<%= link_to "Escribir nueva calificación", new_user_fourth_test_fifth_review_path(@user, @fourth_test) %>
+
+<p>
+  <strong>Video:</strong>
+  <%= @fourth_test.video %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Problema</th>
+      <th>Cliente</th>
+      <th>Propuesta</th>
+      <th>Ventajas</th>
+      <th>Monetización</th>
+      <th>Comunicación</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@avg_problem3%></td>
+      <td><%=@avg_cliente3%></td>
+      <td><%=@avg_propuesta3%></td>
+      <td><%=@avg_ventajas3%></td>
+      <td><%=@avg_monetizacion3%></td>
+      <td><%=@avg_comunicacion3%></td>
+    </tr>
+  </tbody>
+  <em><%= "#{@fourth_test.sixth_reviews.length} calificaciones promediadas" %></em>
+</table><br>
+
+<%= link_to "Escribir nueva calificación", new_user_fourth_test_sixth_review_path(@user, @fourth_test) %>
+
+
 <%= link_to "Edit Status", edit_user_fourth_test_path(@user, @fourth_test) %>   |
-<%= link_to 'Back', @users %>
+<%= link_to 'Back', user_path(@user) %>

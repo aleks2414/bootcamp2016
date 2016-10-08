@@ -10,5 +10,32 @@
   <%= @second_test.user %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Problema</th>
+      <th>Cliente</th>
+      <th>Alternativas Existentes</th>
+      <th>Solución</th>
+      <th>Ventajas Competitivas diferenciadoras</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@avg_problema1%></td>
+      <td><%=@avg_cliente1%></td>
+      <td><%=@avg_alternativa1%></td>
+      <td><%=@avg_solucion1%></td>
+      <td><%=@avg_ventajas1%></td>
+    </tr>
+  </tbody>
+  <em><%= "#{@second_test.second_reviews.length} calificaciones promediadas" %></em>
+</table><br><br>
+
+
+<%= link_to "Escribir nueva calificación", new_user_second_test_second_review_path(@user, @second_test) %>
+
 <%= link_to "Edit Status", edit_user_second_test_path(@user, @second_test) %>  |
-<%= link_to 'Back', @users %>
+<%= link_to 'Back', user_path(@user) %>

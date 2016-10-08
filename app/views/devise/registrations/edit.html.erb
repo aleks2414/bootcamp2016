@@ -3,6 +3,61 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+<!--   <div class="field">
+    <%#= f.label :numero_de_equipo %><br />
+    <%#= f.number_field :team %>
+  </div> -->
+
+  <div class="field">
+    <%= f.label :Alumno_1 %><br />
+    <%= f.text_field :inte1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Matrícula_Alumno_1 %><br />
+    <%= f.text_field :cuenta1 %>
+  </div>
+
+    <div class="field">
+    <%= f.label :Alumno_2 %><br />
+    <%= f.text_field :inte2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Matrícula_Alumno_2 %><br />
+    <%= f.text_field :cuenta2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Alumno_3 %><br />
+    <%= f.text_field :inte3 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Matrícula_Alumno_3 %><br />
+    <%= f.text_field :cuenta3 %>
+  </div>
+
+    <div class="field">
+    <%= f.label :Alumno_4 %><br />
+    <%= f.text_field :inte4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Matrícula_Alumno_4 %><br />
+    <%= f.text_field :cuenta4 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Alumno_5 %><br />
+    <%= f.text_field :inte5 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Matrícula_Alumno_5 %><br />
+    <%= f.text_field :cuenta5 %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

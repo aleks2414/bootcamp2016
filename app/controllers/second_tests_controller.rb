@@ -13,6 +13,19 @@ class SecondTestsController < ApplicationController
   # GET /second_tests/1
   # GET /second_tests/1.json
   def show
+        if @second_test.second_reviews.blank?
+      @avg_problema1=0
+      @avg_cliente1=0
+      @avg_alternativa1=0
+      @avg_solucion1=0
+      @avg_ventajas1=0
+    else
+      @avg_problema1=@second_test.second_reviews.average(:problema1).round(2)
+      @avg_cliente1=@second_test.second_reviews.average(:cliente1).round(2)
+      @avg_alternativa1=@second_test.second_reviews.average(:alternativa1).round(2)
+      @avg_solucion1=@second_test.second_reviews.average(:solucion1).round(2)
+      @avg_ventajas1=@second_test.second_reviews.average(:ventajas1).round(2)
+    end
   end
 
   # GET /second_tests/new

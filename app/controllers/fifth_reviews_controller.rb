@@ -69,9 +69,10 @@ class FifthReviewsController < ApplicationController
       @fifth_review = FifthReview.find(params[:id])
     end
 
-    def set_fouth_test
+    def set_fourth_test
       @fourth_test = FourthTest.find(params[:fourth_test_id])
-    ourth
+    end
+
     def set_user
       @user = User.find(params[:user_id])
     end

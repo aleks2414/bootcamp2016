@@ -21,5 +21,28 @@
   <%= @third_test.user %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Infografía 2</th>
+      <th>Likes en Facebook</th>
+      <th>Aprendizajes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%=@avg_info2%></td>
+      <td><%=@avg_likes1%></td>
+      <td><%=@avg_aprendizaje1%></td>
+    </tr>
+  </tbody>
+  <em><%= "#{@third_test.third_reviews.length} calificaciones promediadas" %></em>
+</table><br><br>
+
+
+<%= link_to "Escribir nueva calificación", new_user_third_test_third_review_path(@user, @third_test) %>
+
 <%= link_to "Edit Status", edit_user_third_test_path(@user, @third_test) %>  |
-<%= link_to 'Back', @users %>
+<%= link_to 'Back', user_path(@user) %>
