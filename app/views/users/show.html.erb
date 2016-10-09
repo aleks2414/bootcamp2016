@@ -1,154 +1,244 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="container">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="row">
+            <div id="formariol">
+              <strong>Equipo:</strong>
+              <h3><%= @user.team %></h3>
+              <br>
+              <div class="row">
+                <div class="col-xs-4">
+                  <%=@user.inte1 %> | | <%=@user.cuenta1 %><br><br>
+              </div>
+              <div class="col-xs-4">
+                  <%=@user.inte2 %> | | <%=@user.cuenta2 %><br><br>
+              </div>
+              <div class="col-xs-4">
+                  <%=@user.inte3 %> | | <%=@user.cuenta3 %><br><br>
+              </div>
+              <div class="col-xs-4">
+                  <%=@user.inte4 %> | | <%=@user.cuenta4 %><br><br>
+              </div>
+              <div class="col-xs-4">
+                  <%=@user.inte5 %> | | <%=@user.cuenta5 %><br><br>
+              </div>
+          </div>
+          <ul>
+           <% if @user.first_tests.blank? %>
+           <%= link_to new_user_first_test_path(@user) do %>
+           <li class="col-sm-2">
+               <h2>Primera Prueba</h2>
+           </li>
+           <% end %>
+           <% else %>
+           <% @user.first_tests.each do |first_test| %>
+           <li class="col-sm-2">
+              <%= link_to edit_user_first_test_path(@user, first_test) do %>
+              <h2>Primera Prueba</h2>
+              <% if current_user.admin? %>
+              <%= link_to "Show", user_first_test_path(@user, first_test) %>
+              <% end %>
+              <% if first_test.first_reviews.present? %>
+              <% if current_user.admin? %>
+              <h3>Calificación: </h3>
+              <%= @total1= first_test.first_reviews.average(:info1).round(2) 
+              @total1 %>
+              <% else %>
+              <td>No hay calificaciones</td>
+              <%= @total1 = 0 %>
+              <% end %>
+              <% end %>
+              <% end %>
+              <% end %>
+              <% end %>
+          </li>
+
+
+          <% if @user.second_tests.blank? %>
+          <%= link_to new_user_second_test_path(@user) do %>
+          <li class="col-sm-2">
+           <h2>Segunda Prueba</h2>
+       </li>
+       <% end %>
+       <% else %>
+       <% @user.second_tests.each do |second_test| %>
+       <li class="col-sm-2">
+          <%= link_to edit_user_second_test_path(@user, second_test) do %>
+          <h2>Segunda Prueba</h2>
+          <% if current_user.admin? %>
+          <%= link_to "Show", user_second_test_path(@user, second_test) %>
+          <% end %>
+          <% if second_test.second_reviews.present? %>
+          <% if current_user.admin? %>
+          <h3>Calificación: </h3>
+          <%= @a = second_test.second_reviews.average(:problema1).round(2) 
+          @b = second_test.second_reviews.average(:cliente1).round(2)
+          @c = second_test.second_reviews.average(:alternativa1).round(2)
+          @d = second_test.second_reviews.average(:solucion1).round(2)
+          @e = second_test.second_reviews.average(:ventajas1).round(2)
+          @total = @a + @b + @c + @d + @e
+
+          @total
+          %>
+          <% else %>
+          <td>No hay calificaciones</td>
+          <%= @total = 0 %>
+          <% end %>
+          <% end %>
+          <% end %>
+          <% end %>
+          <% end %>
+      </li>
 
 
 
-<% if @user.first_tests.blank? %>
-  <h3>Aún no hay primera prueba</h3>
-    <%= link_to "Nueva primera Prueba", new_user_first_test_path(@user) %>
+      <% if @user.third_tests.blank? %>
+      <%= link_to new_user_third_test_path(@user) do %>
+      <li class="col-sm-2">
+       <h2>Tercera Prueba</h2>
+   </li>
+   <% end %>
+   <% else %>
+   <% @user.third_tests.each do |third_test| %>
+   <li class="col-sm-2">
+      <%= link_to edit_user_third_test_path(@user, third_test) do %>
+      <h2>Tercera Prueba</h2>
+      <% if current_user.admin? %>
+      <%= link_to "Show", user_third_test_path(@user, third_test) %>
+      <% end %>
+      <% if third_test.third_reviews.present? %>
+      <% if current_user.admin? %>
+      <h3>Calificación: </h3>
+      <%= @f= third_test.third_reviews.average(:info2).round(2) 
+      @g= third_test.third_reviews.average(:likes1).round(2)
+      @h= third_test.third_reviews.average(:aprendizaje1).round(2)
+
+      @total2= @f + @g + @h 
+      @total2 %>
+      <% else %>
+      <td>No hay calificaciones</td>
+      <%= @total2 = 0 %>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% end %>
+      <% end %>
+  </li>
+
+  <% if @user.fourth_tests.blank? %>
+  <%= link_to new_user_fourth_test_path(@user) do %>
+  <li class="col-sm-2">
+   <h2>Cuarta Prueba</h2>
+</li>
+<% end %>
 <% else %>
-  <% @user.first_tests.each do |first_test| %>
-  	<%= first_test.info1 %>
-  	<%= link_to "Edit Status", edit_user_first_test_path(@user, first_test) %>
-    <%= link_to "Show", user_first_test_path(@user, first_test) %>
-    <% if first_test.first_reviews.present? %>
-    <h3>Calificación: </h3>
-    <%= @total1= first_test.first_reviews.average(:info1).round(2) 
-        @total1 %>
-    <% else %>
-    <td>No hay calificaciones</td>
-    <%= @total1 = 0 %>
-    <% end %>
-<% end %>
-<% end %>
+<% @user.fourth_tests.each do |fourth_test| %>
+<li class="col-sm-2">
+  <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
+  <h2>Cuarta Prueba</h2>
+  <% if current_user.admin? %>
+  <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
+  <% end %>
+  <% if fourth_test.fourth_reviews.present? %>
+  <% if current_user.admin? %>
+  <h3>Calificación: </h3>
+  <%= @i= fourth_test.fourth_reviews.average(:video).round(2)
+  @j= fourth_test.fourth_reviews.average(:likes2).round(2)
+  @k= fourth_test.fourth_reviews.average(:aprendizaje2).round(2)
 
-<br>
+  @total3= @i + @j + @k
+  @total3 %>
+  <% else %>
+  <td>No hay calificaciones</td>
+  <%= @total3 = 0 %>
+  <% end %>
+  <% end %>
+  <% end %>
+  <% end %>
+  <% end %>
+</li>
 
-<% if @user.second_tests.blank? %>
-  <h3>Aún no hay Segunda prueba</h3>
-    <%= link_to "Nueva Segunda Prueba", new_user_second_test_path(@user) %>
-<% else %>
-  <% @user.second_tests.each do |second_test| %>
-  	<%= second_test.boceto %>
-  	<%= link_to "Edit Status", edit_user_second_test_path(@user, second_test) %>
-    <%= link_to "Show", user_second_test_path(@user, second_test) %>
-    <% if second_test.second_reviews.present? %>
-    <h3>Calificación: </h3>
-    <%= @a = second_test.second_reviews.average(:problema1).round(2) 
-        @b = second_test.second_reviews.average(:cliente1).round(2)
-        @c = second_test.second_reviews.average(:alternativa1).round(2)
-        @d = second_test.second_reviews.average(:solucion1).round(2)
-        @e = second_test.second_reviews.average(:ventajas1).round(2)
-        @total = @a + @b + @c + @d + @e
-
-        @total
-         %>
-    <% else %>
-    <td>No hay calificaciones</td>
-    <%= @total = 0 %>
-    <% end %>
-<% end %>
-<% end %>
-
-<br>
-<% if @user.third_tests.blank? %>
-  <h3>Aún no hay Tercera prueba</h3>
-    <%= link_to "Nueva Tercera Prueba", new_user_third_test_path(@user) %>
-<% else %>
-  <% @user.third_tests.each do |third_test| %>
-  	<%= third_test.info2 %>
-    <%= third_test.likes1 %>
-    <%= third_test.aprendizajes1 %>
-  	<%= link_to "Edit Status", edit_user_third_test_path(@user, third_test) %>
-    <%= link_to "Show", user_third_test_path(@user, third_test) %>
-    <% if third_test.third_reviews.present? %>
-    <h3>Calificación: </h3>
-    <%= @f= third_test.third_reviews.average(:info2).round(2) 
-        @g= third_test.third_reviews.average(:likes1).round(2)
-        @h= third_test.third_reviews.average(:aprendizaje1).round(2)
-
-        @total2= @f + @g + @h 
-        @total2 %>
-    <% else %>
-    <td>No hay calificaciones</td>
-    <%= @total2 = 0 %>
-    <% end %>
-<% end %>
-<% end %>
-
-<br>
-
+<% if current_user.admin? %>
 <% if @user.fourth_tests.blank? %>
-  <h3>Aún no hay Cuarta prueba</h3>
-    <%= link_to "Nueva Cuarta Prueba", new_user_fourth_test_path(@user) %>
+<%= link_to new_user_fourth_test_path(@user) do %>
+<li class="col-sm-2">
+   <h2>Video</h2>
+</li>
+<% end %>
 <% else %>
-  <% @user.fourth_tests.each do |fourth_test| %>
-  	<%= fourth_test.video %>
-    <%= fourth_test.likes2 %>
-    <%= fourth_test.aprendizajes2 %>
-  	<%= link_to "Edit Status", edit_user_fourth_test_path(@user, fourth_test) %>
-    <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
-    <% if fourth_test.fourth_reviews.present? %>
-    <h3>Calificación: </h3>
-    <%= @i= fourth_test.fourth_reviews.average(:video).round(2)
-        @j= fourth_test.fourth_reviews.average(:likes2).round(2)
-        @k= fourth_test.fourth_reviews.average(:aprendizaje2).round(2)
-
-        @total3= @i + @j + @k
-        @total3 %>
-    <% else %>
-    <td>No hay calificaciones</td>
-    <%= @total3 = 0 %>
-    <% end %>
-
-
-    <% if fourth_test.fifth_reviews.present? %>
-    <h3>Calificación de Video: </h3>
-    <%= @l= fourth_test.fifth_reviews.average(:problem2).round(2) 
-    @m= fourth_test.fifth_reviews.average(:cliente2).round(2) 
-    @n= fourth_test.fifth_reviews.average(:propuesta2).round(2) 
-    @o= fourth_test.fifth_reviews.average(:ventajas2).round(2) 
-    @p= fourth_test.fifth_reviews.average(:monetizacion2).round(2) 
-    @q= fourth_test.fifth_reviews.average(:comunicacion2).round(2) 
-        @total4 = @l + @m + @n + @o + @p +@q %>
-    <% else %>
-    <td>No hay calificaciones</td>
-    <%= @total4 = 0 %>
-    <% end %>
-
-
-        <% if fourth_test.sixth_reviews.present? %>
-    <h3>Calificación de Pitch FINAL: </h3>
-    <%= @r= fourth_test.sixth_reviews.average(:problem3).round(2) 
-    @s= fourth_test.sixth_reviews.average(:cliente3).round(2) 
-    @t= fourth_test.sixth_reviews.average(:propuesta3).round(2) 
-    @u= fourth_test.sixth_reviews.average(:ventajas3).round(2) 
-    @v= fourth_test.sixth_reviews.average(:monetizacion3).round(2) 
-    @w= fourth_test.sixth_reviews.average(:comunicacion3).round(2) 
-        @total5 = @r + @s + @t + @u + @v +@w %>
-    <% else %>
-    <td>No hay calificaciones</td>
-    <%= @total5 = 0 %>
-    <% end %>
-
-
-
-<% end %>
+<% @user.fourth_tests.each do |fourth_test| %>
+<li class="col-sm-2">
+  <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
+  <h2>Video</h2>
+  <% if current_user.admin? %>
+  <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
+  <% end %>
+  <% if fourth_test.fifth_reviews.present? %>
+  <h3>Calificación de Video: </h3>
+  <%= @l= fourth_test.fifth_reviews.average(:problem2).round(2) 
+  @m= fourth_test.fifth_reviews.average(:cliente2).round(2) 
+  @n= fourth_test.fifth_reviews.average(:propuesta2).round(2) 
+  @o= fourth_test.fifth_reviews.average(:ventajas2).round(2) 
+  @p= fourth_test.fifth_reviews.average(:monetizacion2).round(2) 
+  @q= fourth_test.fifth_reviews.average(:comunicacion2).round(2) 
+  @total4 = @l + @m + @n + @o + @p +@q %>
+  <% else %>
+  <td>No hay calificaciones</td>
+  <%= @total4 = 0 %>
+  <% end %>
+  <% end %>
+  <% end %>
+  <% end %>
+</li>
 <% end %>
 
+<% if current_user.admin? %>
+<% if @user.fourth_tests.blank? %>
+<%= link_to new_user_fourth_test_path(@user) do %>
+<li class="col-sm-2">
+   <h2>Video</h2>
+</li>
+<% end %>
+<% else %>
+<% @user.fourth_tests.each do |fourth_test| %>
+<li class="col-sm-2">
+  <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
+  <h2>Video</h2>
+  <% if current_user.admin? %>
+  <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
+  <% end %>
+  <% if fourth_test.fifth_reviews.present? %>
+  <h3>Calificación de Video: </h3>
+  <%= @l= fourth_test.fifth_reviews.average(:problem2).round(2) 
+  @m= fourth_test.fifth_reviews.average(:cliente2).round(2) 
+  @n= fourth_test.fifth_reviews.average(:propuesta2).round(2) 
+  @o= fourth_test.fifth_reviews.average(:ventajas2).round(2) 
+  @p= fourth_test.fifth_reviews.average(:monetizacion2).round(2) 
+  @q= fourth_test.fifth_reviews.average(:comunicacion2).round(2) 
+  @total4 = @l + @m + @n + @o + @p +@q %>
+  <% else %>
+  <td>No hay calificaciones</td>
+  <%= @total4 = 0 %>
+  <% end %>
+  <% end %>
+  <% end %>
+  <% end %>
+</li>
+<% end %>
+
+</ul>
+</div>
+</div>
+</div>
+</div>
 
 
+
+<% if current_user.admin? %>
 <h3>Calificación de trabajo</h3>
 <%= @total + @total2 + @total3 + @total1 %>
+<% end %>
 
 
-
-
-
-<br><br><br>
-<%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

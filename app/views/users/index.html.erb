@@ -1,6 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="row">
+    <div id="formariol">
+      <ul>
+        <% if current_user.admin? %>
+          <% @users.each do |user| %>
+          <li class="col-sm-2">
+          <h2>Equipo: <%= user.team %></h2>
+          <%= link_to 'Ver prueba', user %>
+          </li>
+          <% end %>
+        <% else %>
+          <% @usera.each do |user| %>
+          <li class="col-sm-2">
+          <h2>Equipo: <%= user.team %></h2>
+          <%= link_to 'Ver prueba', user %>
+          </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- <h1>Listing Users</h1>
 
 <table>
   <thead>
@@ -28,4 +54,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path %> -->
