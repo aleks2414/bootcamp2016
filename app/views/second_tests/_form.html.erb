@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-<h2>Fase <strong>2. SOLUCIÓN</strong></h2>
+<h2>Fase <strong>2. PROPUESTA PRELIMINAR DE SOLUCIÓN</strong></h2>
   <hr class="blue">
-<p class="center">Adjunta el archivo que editaste en PDF del Boceto de idea. </p>
+<p class="center">Adjunta el archivo del Boceto de idea. </p>
 
   <div class="field">
-    <%= f.label :boceto %><br>
+    <%= f.label :Boceto_de_idea %><br>
     <%= @second_test.boceto if @second_test.boceto %> <br><br>
     <%= f.file_field :boceto %>
     <%= f.hidden_field :boceto_cache %>

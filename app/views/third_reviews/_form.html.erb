@@ -14,24 +14,24 @@
 <h2>Fase <strong>3. PROTOTIPADO</strong></h2>
   <hr class="blue">
 
-  <p class="center">Para este momento, el equipo ya validó el problema y al cliente. Lo que están validando en esta fase es la solución con un prototipado de baja fidelidad, que es una infografía en una página de facebook como empresa. <br><br>
+  <p class="center">Para este momento, el equipo ya validó el problema y al cliente. Lo que están validando en esta fase es la solución con un prototipado de baja fidelidad, que es una infografía. <br><br>
 
 Revisa la infografía y califica el contenido, el diseño y las llamadas a la acción. <br><br></p>
 
   <div class="field">
-    <%= f.label :contenido_de_la_infografía %><br>
+    <%= f.label :Contenido_de_la_infografía %><br>
     <!-- <%#= f.number_field :info2 %> -->
-    <%= f.select :info2, [["La infografía expone de manera creativa y clara la propuesta de solución. Se nota el problema/oportunidad que está atendiendo y las ventajas competitivas son claras y diferenciadoras.", 15], ["La infografía expone de manera simple la solución. Las ventajas competitivas no están claras del todo claras y el problema/oportunidad atendido es confuso.", 10], ["La infografía expone la solución sin dejar ver las ventajas competitivas ni el problema/oportunidad atendido.", 0]]%>
+    <%= f.select :info2, [["La infografía expone de manera creativa y clara la propuesta de solución. Se nota el problema/oportunidad que está atendiendo y las ventajas competitivas son claras y diferenciadoras.", 10], ["La infografía expone de manera simple la solución. Las ventajas competitivas no están claras del todo claras y el problema/oportunidad atendido es confuso.", 5], ["La infografía expone la solución sin dejar ver las ventajas competitivas ni el problema/oportunidad atendido.", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :likes %><br>
+    <%= f.label :Diseño_y_llamada_a_la_acción %><br>
     <!-- <%#= f.number_field :likes1 %> -->
-    <%= f.select :likes1, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
+    <%= f.select :likes1, [["El diseño es atractivo, comunica e invita a la reflexión o interés y tiene llamada a la acción clara", 10], ["El diseño es poco atractivo y comunica medianamente la situación que se quiere ejemplificar y tiene una llamada a la acción poco clara", 5], ["El diseño no es atractivo y no comunica ni medianamente lo el mensaje objetivo y no tiene llamada a la acción", 0]]%>
   </div>
   <div class="field">
     <%= f.label :aprendizaje %><br>
     <!-- <%#= f.number_field :aprendizaje1 %> -->
-    <%= f.select :aprendizaje1, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
+    <%= f.select :aprendizaje1, [["Los aprendizajes que expone son verdaderamente relevantes para la propuesta", 5], ["Los aprendizajes que expone no invita a hacer modificaciones a la propuesta", 3], ["No expone aprendizajes o escribió cualquier cosa", 0]]%>
   </div>
 
   <br><br>

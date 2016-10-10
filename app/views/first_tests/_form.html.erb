@@ -11,14 +11,13 @@
     </div>
   <% end %>
 
-  <h2>Fase <strong>1. PROBLEMA</strong></h2>
+  <h2>Fase <strong>1. DEFINICIÓN DEL PROBLEMA Y USUARIO</strong></h2>
   <hr class="blue">
 
-  <p class="center">Adjunta el archivo con la infografía que utilizaste para hacer la primera validación
-</p>
+  <p class="center">Descagar este archivo y edítalo agregando el reporte de tus entrevistas. <br> Después adjunta el archivo editado </p>
 
   <div class="field">
-    <%= f.label :info1 %><br>
+    <%= f.label :Reporte_de_entrevistas %><br>
     <%= @first_test.info1 if @first_test.info1 %>
     <br><br>
     <%= f.file_field :info1 %>

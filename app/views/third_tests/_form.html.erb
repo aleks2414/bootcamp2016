@@ -11,25 +11,25 @@
     </div>
   <% end %>
 
-<h2>Fase <strong>3. PROTOTIPADO</strong></h2>
+<h2>Fase <strong>3. PROTOTIPADO DE SOLUCIÓN</strong></h2>
   <hr class="blue">
 
 <p class="center">Adjunta la infografía que utilizaste para la segunda validación, los likes en facebook y los aprendizajes que tuviste.
 </p>
 
   <div class="field">
-    <%= f.label :info2 %><br>
+    <%= f.label :infografía_de_solución %><br>
     <%= @third_test.info2 if @third_test.info2 %>
     <br><br>
     <%= f.file_field :info2 %>
     <%= f.hidden_field :info2_cache %>
   </div>
   <div class="field">
-    <%= f.label :likes1 %><br>
+    <%= f.label :número_de_likes %><br>
     <%= f.number_field :likes1 %>
   </div>
   <div class="field">
-    <%= f.label :aprendizajes1 %><br>
+    <%= f.label :Escribe_los_aprendizajes_más_relevantes %><br>
     <%= f.text_field :aprendizajes1 %>
   </div>
   <br><br>

@@ -185,7 +185,7 @@
   <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
   <h2>Video</h2>
   <% if current_user.admin? %>
-  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test) %>
+  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test, :anchor => "video") %>
   <% end %>
   <% if fourth_test.fifth_reviews.present? %>
   <h3>Calificación de Video: </h3>
@@ -221,7 +221,7 @@
   <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
   <h2>Pitch</h2>
   <% if current_user.admin? %>
-  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test) %>
+  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test, :anchor => "pitch") %>
   <% end %>
   <% if fourth_test.sixth_reviews.present? %>
   <h3>Calificación de Pitch: </h3>

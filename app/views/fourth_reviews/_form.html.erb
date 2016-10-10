@@ -14,23 +14,23 @@
 <h2>Fase <strong>4. PIVOTEO Y PRESENTACIÓN</strong></h2>
   <hr class="blue">
 
-  <p class="center">En esta fase vamos a calificar: la entrega del video y su duración, no su contenido, el número de likes en facebook y los aprendizajes
+  <p class="center">En esta fase vamos a calificar: la entrega del video y su duración, no su contenido y los cambios que hizo a su solución
 </p>
 
   <div class="field">
     <%= f.label :video %><br>
     <!-- <%#= f.number_field :video %> -->
-    <%= f.select :video, [["Entregó en tiempo y dura dos minutos o menos", 10], ["Sólo una de las dos: entregó en tiempo y dura dos minutos o menos", 5], ["No entregó en tiempo y no dura dos minutos o menos", 0]]%>
+    <%= f.select :video, [["Entregó en tiempo y dura dos minutos o menos", 15], ["Sólo una de las dos: entregó en tiempo y dura dos minutos o menos", 8], ["No entregó en tiempo y no dura dos minutos o menos", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :likes %><br>
+    <%= f.label :calidad_de_video %><br>
     <!-- <%#= f.number_field :likes2 %> -->
-    <%= f.select :likes2, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
+    <%= f.select :likes2, [["La calidad de la imagen y el audio es buena", 5], ["La calidad de la imagen o del video no es lo suficientemente buena", 3], ["La calidad es muy mala", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :aprendizaje %><br>
+    <%= f.label :Cambios_a_la_solución %><br>
     <!-- <%#= f.number_field :aprendizaje2 %> -->
-    <%= f.select :aprendizaje2, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
+    <%= f.select :aprendizaje2, [["Hizo cambios significativos a su propuesta previa", 5], ["Hizo cambios superficiales a su propuesta anterior", 3], ["No hizo cambios a su propuesta anterior", 0]]%>
   </div>
 
   <br><br>

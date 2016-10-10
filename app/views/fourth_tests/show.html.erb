@@ -6,19 +6,15 @@
       <strong>Equipo:</strong>
       <%= @fourth_test.user.team %>
     </p>
-    <h2 id="cuarta">Cuarta Prueba</h2>
+    <h2>Cuarta Prueba</h2>
 <p>
   <strong>Video:</strong>
 <%= link_to "#{@fourth_test.video}", "#{@fourth_test.video}", :target => "_blank" %>
 </p>
 
-<p>
-  <strong>Likes2:</strong>
-  <%= @fourth_test.likes2 %>
-</p>
 
 <p>
-  <strong>Aprendizajes2:</strong>
+  <strong>Modificaciones la solución anterior:</strong>
   <%= @fourth_test.aprendizajes2 %>
 </p>
 
@@ -44,8 +40,14 @@
 
 
 <%= link_to "Escribir nueva calificación", new_user_fourth_test_fourth_review_path(@user, @fourth_test) %>
-<br><br><br><br>
-<h2 id="video">Calificación Video</h2>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>
+      <strong id="video">Equipo:</strong>
+      <%= @fourth_test.user.team %>
+    </p>
+<h2>Calificación Video</h2>
 
 <p>
   <strong>Video:</strong>
@@ -81,7 +83,11 @@
 
 <%= link_to "Escribir nueva calificación", new_user_fourth_test_fifth_review_path(@user, @fourth_test) %>
 
-<br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p>
+      <strong>Equipo:</strong>
+      <%= @fourth_test.user.team %>
+    </p>
 <h2 id="pitch">Pitch Final</h2>
 
 <p>
