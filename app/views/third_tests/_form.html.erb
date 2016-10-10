@@ -19,7 +19,10 @@
 
   <div class="field">
     <%= f.label :info2 %><br>
-    <%= f.text_field :info2 %>
+    <%= @third_test.info2 if @third_test.info2 %>
+    <br><br>
+    <%= f.file_field :info2 %>
+    <%= f.hidden_field :info2_cache %>
   </div>
   <div class="field">
     <%= f.label :likes1 %><br>

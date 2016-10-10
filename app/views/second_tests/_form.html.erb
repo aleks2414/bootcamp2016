@@ -17,7 +17,9 @@
 
   <div class="field">
     <%= f.label :boceto %><br>
-    <%= f.text_field :boceto %>
+    <%= @second_test.boceto if @second_test.boceto %> <br><br>
+    <%= f.file_field :boceto %>
+    <%= f.hidden_field :boceto_cache %>
   </div>
   <br><br>
   <div class="actions">
