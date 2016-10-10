@@ -1,7 +1,4 @@
-<% @total = 0 %>
-<% @total1 = 0 %>
-<% @total2 = 0 %>
-<% @total3 = 0 %>
+<% @total = 0 %><% @total1 = 0 %><% @total2 = 0 %><% @total3 = 0 %><% @total4 = 0 %><% @total5 = 0 %>
 
 <p id="notice"><%= notice %></p>
 
@@ -53,8 +50,7 @@
               <%= @total1= first_test.first_reviews.average(:info1).round(2) 
               @total1 %>
               <% else %>
-              <td>No hay calificaciones</td>
-              <%= @total1 = 0 %>
+              <td></td>
               <% end %>
               <% end %>
               <% end %>
@@ -93,8 +89,7 @@
           @total
           %>
           <% else %>
-          <td>No hay calificaciones</td>
-          <%= @total = 0 %>
+          <td></td>
           <% end %>
           <% end %>
           <% end %>
@@ -131,8 +126,7 @@
       @total2= @f + @g + @h 
       @total2 %>
       <% else %>
-      <td>No hay calificaciones</td>
-      <%= @total2 = 0 %>
+      <td></td>
       <% end %>
       <% end %>
       <% end %>
@@ -167,8 +161,7 @@
   @total3= @i + @j + @k
   @total3 %>
   <% else %>
-  <td>No hay calificaciones</td>
-  <%= @total3 = 0 %>
+  <td></td>
   <% end %>
   <% end %>
   <% end %>
@@ -204,8 +197,7 @@
   @q= fourth_test.fifth_reviews.average(:comunicacion2).round(2) 
   @total4 = @l + @m + @n + @o + @p +@q %>
   <% else %>
-  <td>No hay calificaciones</td>
-  <%= @total4 = 0 %>
+  <td></td>
   <% end %>
   <% end %>
   <% end %>
@@ -239,10 +231,9 @@
   @o= fourth_test.sixth_reviews.average(:ventajas3).round(2) 
   @p= fourth_test.sixth_reviews.average(:monetizacion3).round(2) 
   @q= fourth_test.sixth_reviews.average(:comunicacion3).round(2) 
-  @total4 = @l + @m + @n + @o + @p +@q %>
+  @total5 = @l + @m + @n + @o + @p +@q %>
   <% else %>
-  <td>No hay calificaciones</td>
-  <%= @total4 = 0 %>
+  <td></td>
   <% end %>
   <% end %>
   <% end %>
@@ -256,13 +247,30 @@
 </div>
 </div>
 
-
+<%= link_to 'Back', users_path %>
 
 <% if current_user.admin? %>
-<h3>Calificación de trabajo</h3>
-<%= @total + @total2 + @total3 + @total1 %>
+<div class="col-sm-10 col-sm-offset-1">
+  <div id="formario">
+    <div class="row">
+      <h2>Calificación de trabajo</h2>
+      <h5 class="center"><%= @total + @total2 + @total3 + @total1 %></h5>
+      <br>
+      <h2>Calificación de Video</h2>
+      <h5 class="center"><%= @total4 %></h5>
+      <br>
+      <h2>Calificación de Pitch Final</h2>
+      <h5 class="center"><%= @total5 %></h5>
+            <%= link_to 'Back', users_path %>
+
+
+      <br>
+    </div>
+  </div>
+</div>
 <% end %>
 
-<br>
 
-<%= link_to 'Back', users_path %>
+
+
+
