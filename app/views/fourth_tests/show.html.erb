@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<div class="col-sm-10 col-sm-offset-1">
+  <div id="formario">
+    <p>
+      <strong>Equipo:</strong>
+      <%= @fourth_test.user.team %>
+    </p>
+    <h2 id="cuarta">Cuarta Prueba</h2>
 <p>
   <strong>Video:</strong>
-  <%= @fourth_test.video %>
+<%= link_to "#{@fourth_test.video}", "#{@fourth_test.video}", :target => "_blank" %>
 </p>
 
 <p>
@@ -37,10 +44,12 @@
 
 
 <%= link_to "Escribir nueva calificación", new_user_fourth_test_fourth_review_path(@user, @fourth_test) %>
+<br><br><br><br>
+<h2 id="video">Calificación Video</h2>
 
 <p>
   <strong>Video:</strong>
-  <%= @fourth_test.video %>
+<%= link_to "#{@fourth_test.video}", "#{@fourth_test.video}", :target => "_blank" %>
 </p>
 
 <table>
@@ -72,9 +81,12 @@
 
 <%= link_to "Escribir nueva calificación", new_user_fourth_test_fifth_review_path(@user, @fourth_test) %>
 
+<br><br><br><br>
+<h2 id="pitch">Pitch Final</h2>
+
 <p>
   <strong>Video:</strong>
-  <%= @fourth_test.video %>
+<%= link_to "#{@fourth_test.video}", "#{@fourth_test.video}", :target => "_blank" %>
 </p>
 
 <table>
@@ -104,7 +116,9 @@
 </table><br>
 
 <%= link_to "Escribir nueva calificación", new_user_fourth_test_sixth_review_path(@user, @fourth_test) %>
-
-
-<%= link_to "Edit Status", edit_user_fourth_test_path(@user, @fourth_test) %>   |
+<br><br>
 <%= link_to 'Back', user_path(@user) %>
+  </div>
+</div>
+
+

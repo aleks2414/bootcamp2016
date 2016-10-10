@@ -11,31 +11,37 @@
     </div>
   <% end %>
 
+<h2>Fase <strong>2. SOLUCIÓN</strong></h2>
+  <hr class="blue">
+<p class="center">Para esta etapa, el equipo ya debe tener planteada una solución preeliminar. Revisa el boceto de idea y, para cada uno de los bloques, elige la opción que mejor describa el contenido.
+</p>
+
   <div class="field">
-    <%= f.label :problema1 %><br>
+    <%= f.label :problema_o_reto %><br>
     <!-- <%#= f.number_field :problema1 %> -->
     <%= f.select :problema1, [["El reto está bien definido y es fácil ver que se trata de un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :cliente1 %><br>
+    <%= f.label :cliente_y_o_usuario %><br>
     <!-- <%#= f.number_field :cliente1 %> -->
     <%= f.select :cliente1, [["Se identifica con claridad quién es el cliente y quién es el usuario. Es claro identificar por qué ellos tienen el problema/oportunidad", 5], ["La descripción del cliente y/o usuario es muy general y ambigua; es difícil de entender por qué tienen ellos el problema/oportunidad", 3], ["No está claro quien es el cliente y/o usuario", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :alternativa1 %><br>
+    <%= f.label :alternativas_de_solución %><br>
     <!-- <%#= f.number_field :alternativa1 %> -->
     <%= f.select :alternativa1, [["Identifica las alternativas de solución que tienen los clientes de manera clara y logra citar algunas", 5], ["Plantea pocas alternativas de solución existentes, y también pocos sustitutos, evidenciando una búsqueda poco profunda", 3], ["Dice algo como *no hay competencia*, *no hay nada igual*. No logra identificar tampoco sustitutos", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :solucion1 %><br>
+    <%= f.label :solucion_propuesta %><br>
     <!-- <%#= f.number_field :solucion1 %> -->
     <%= f.select :solucion1, [["Describe de forma clara la solución, diciendo si es un producto o un servicio y sus características principales", 5], ["Habla de la solución de forma genérica, no se entiende del todo de qué se trata ni qué es lo que esta ofreciendo", 3], ["No se entiende la solución planteada", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :ventajas1 %><br>
+    <%= f.label :ventajas_competitivas_diferenciadoras %><br>
     <!-- <%#= f.number_field :ventajas1 %> -->
     <%= f.select :ventajas1, [["Las ventajas competitivas que proponen son diferenciadoras y difíciles de copiar", 5], ["Las ventajas competitivas no son tan diferentes a lo que existe, no mejora sustancialmente las alternativas o son fáciles de copiar", 3], ["No demuestra ventajas competitivas, no existen elementos de diferenciación", 0]]%>
   </div>
+  <br><br>
   <div class="actions">
     <%= f.submit %>
   </div>

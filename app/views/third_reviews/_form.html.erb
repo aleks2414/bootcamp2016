@@ -11,21 +11,30 @@
     </div>
   <% end %>
 
+<h2>Fase <strong>3. PROTOTIPADO</strong></h2>
+  <hr class="blue">
+
+  <p class="center">Para este momento, el equipo ya validó el problema y al cliente. Lo que están validando en esta fase es la solución con un prototipado de baja fidelidad, que es una infografía en una página de facebook como empresa. <br><br>
+
+Revisa la infografía y califica el contenido, el diseño y las llamadas a la acción. <br><br></p>
+
   <div class="field">
-    <%= f.label :info2 %><br>
+    <%= f.label :contenido_de_la_infografía %><br>
     <!-- <%#= f.number_field :info2 %> -->
     <%= f.select :info2, [["La infografía expone de manera creativa y clara la propuesta de solución. Se nota el problema/oportunidad que está atendiendo y las ventajas competitivas son claras y diferenciadoras.", 15], ["La infografía expone de manera simple la solución. Las ventajas competitivas no están claras del todo claras y el problema/oportunidad atendido es confuso.", 10], ["La infografía expone la solución sin dejar ver las ventajas competitivas ni el problema/oportunidad atendido.", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :likes1 %><br>
+    <%= f.label :likes %><br>
     <!-- <%#= f.number_field :likes1 %> -->
     <%= f.select :likes1, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :aprendizaje1 %><br>
+    <%= f.label :aprendizaje %><br>
     <!-- <%#= f.number_field :aprendizaje1 %> -->
     <%= f.select :aprendizaje1, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
+
+  <br><br>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,7 +1,7 @@
 class SixthReviewsController < ApplicationController
   before_action :set_sixth_review, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # before_action :filter_admin!
+  before_action :filter_admin!
   before_action :set_fourth_test
   before_action :set_user
 
@@ -63,6 +63,11 @@ class SixthReviewsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+def filter_admin!
+ authenticate_user!
+ redirect_to root_path, alert: "Lo lamento, no tienes acceso" unless current_user.admin?
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

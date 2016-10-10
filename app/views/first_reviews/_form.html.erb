@@ -11,8 +11,14 @@
     </div>
   <% end %>
 
+<h2>Fase <strong>1. PROBLEMA</strong></h2>
+  <hr class="blue">
+  
+  <p class="center">La infografía/imagen en esta fase debe de transmitir claramente cuál es el reto que quieren resolver y qué personas están involucradas. Elige la opción que mejor describa a la imagen/infografía: 
+</p>
+
   <div class="field">
-    <%= f.label :info1 %><br>
+    <%= f.label :La_imagen_describe_y_o_explica %><br>
     <!-- <%#= f.number_field :info1 %> -->
     <%= f.select :info1, [["al problema y al cliente de forma clara", 25], ["al problema claramente pero al cliente no tan bien", 15], ["al cliente claramente pero al problema no tan bien", 15], ["al problema y al cliente no tan bien ", 5], ["ni el problema ni el cliente quedan claros", 0]]%>
   </div>

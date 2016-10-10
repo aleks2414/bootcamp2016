@@ -11,31 +11,37 @@
     </div>
   <% end %>
 
+<h2>Fase <strong>6. PITCH FINAL</strong></h2>
+  <hr class="blue">
+
+<p class="center">Esta parte en unicamente para los finalistas. Ve el video y elige la opción que mejor describa cada rubro.</p>
+
 <div class="field">
-    <%= f.label :problem3 %><br>
+    <%= f.label :problema_oportunidad %><br>
   <%= f.select :problem3, [["El problema/oportunidad está bien definido y es fácil ver que es un problema/oportunidad relevante", 5], ["El problema/oportunidad es muy general y cuesta trabajo saber si es relevante o no", 3], ["Se nota claramente que el problema/oportunidad no es relevante", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :cliente3 %><br>
+    <%= f.label :cliente_y_o_usuario %><br>
     <%= f.select :cliente3, [["Está claro quién es el cliente y quién es el usuario y es fácil identificar por qué ellos tienen el problema/oportunidad", 5], ["La descripción del cliente y/o usuario es muy general y es difícil de entender por qué tienen ellos el problema/oportunidad", 3], ["No está claro el cliente y/o usuario", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :propuesta3 %><br>
+    <%= f.label :propuesta_de_solucion %><br>
     <%= f.select :propuesta3, [["Describe de forma clara la solución, diciendo si es un producto o un servicio ", 5], ["Habla de la solución de forma genérica, no se entiende del todo de qué se trata", 3], ["No se entiende la solución planteada", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :ventajas3 %><br>
+    <%= f.label :ventajas_competitivas_diferenciadoras %><br>
 <%= f.select :ventajas3, [["Las ventajas competitivas que proponen son relevantes y difíciles de copiar", 5], ["Las ventajas competitivas no son tan relevantes o son fáciles de copiar", 3], ["No demuestra ventajas competitivas que sean relevantes y cualquiera podría copiarlas", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :monetizacion3 %><br>
+    <%= f.label :monetizacion %><br>
     <%= f.select :monetizacion3, [["El modelo de monetización es claro y propicia el escalamiento ", 5], ["El modelo de monetización no es claro o no propicia el escalamiento", 3], ["No habla del modelo de monetización", 0]]%>
   </div>
   <div class="field">
-    <%= f.label :comunicacion3 %><br>
+    <%= f.label :comunicacion %><br>
     <%= f.select :comunicacion3, [["El video está claro, convence y mueve a la acción", 5], ["El video está claro pero no convence ni mueve a la acción", 3], ["El video no está claro y no mueve ni llama a la acción", 0]]%>
   </div>
 
+<br>  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

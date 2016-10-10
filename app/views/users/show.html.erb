@@ -1,3 +1,8 @@
+<% @total = 0 %>
+<% @total1 = 0 %>
+<% @total2 = 0 %>
+<% @total3 = 0 %>
+
 <p id="notice"><%= notice %></p>
 
 <div class="container">
@@ -29,6 +34,9 @@
            <%= link_to new_user_first_test_path(@user) do %>
            <li class="col-sm-2">
                <h2>Primera Prueba</h2>
+           <% if current_user.admin? %>
+            <h5>Aún no hay pruebas para calificar</h5>
+           <% end %>
            </li>
            <% end %>
            <% else %>
@@ -37,7 +45,7 @@
               <%= link_to edit_user_first_test_path(@user, first_test) do %>
               <h2>Primera Prueba</h2>
               <% if current_user.admin? %>
-              <%= link_to "Show", user_first_test_path(@user, first_test) %>
+              <%= link_to "Calificar", user_first_test_path(@user, first_test) %>
               <% end %>
               <% if first_test.first_reviews.present? %>
               <% if current_user.admin? %>
@@ -59,6 +67,9 @@
           <%= link_to new_user_second_test_path(@user) do %>
           <li class="col-sm-2">
            <h2>Segunda Prueba</h2>
+           <% if current_user.admin? %>
+            <h5>Aún no hay pruebas para calificar</h5>
+           <% end %>
        </li>
        <% end %>
        <% else %>
@@ -67,7 +78,7 @@
           <%= link_to edit_user_second_test_path(@user, second_test) do %>
           <h2>Segunda Prueba</h2>
           <% if current_user.admin? %>
-          <%= link_to "Show", user_second_test_path(@user, second_test) %>
+          <%= link_to "Calificar", user_second_test_path(@user, second_test) %>
           <% end %>
           <% if second_test.second_reviews.present? %>
           <% if current_user.admin? %>
@@ -97,6 +108,9 @@
       <%= link_to new_user_third_test_path(@user) do %>
       <li class="col-sm-2">
        <h2>Tercera Prueba</h2>
+           <% if current_user.admin? %>
+            <h5>Aún no hay pruebas para calificar</h5>
+           <% end %>
    </li>
    <% end %>
    <% else %>
@@ -105,7 +119,7 @@
       <%= link_to edit_user_third_test_path(@user, third_test) do %>
       <h2>Tercera Prueba</h2>
       <% if current_user.admin? %>
-      <%= link_to "Show", user_third_test_path(@user, third_test) %>
+      <%= link_to "Calificar", user_third_test_path(@user, third_test) %>
       <% end %>
       <% if third_test.third_reviews.present? %>
       <% if current_user.admin? %>
@@ -130,6 +144,9 @@
   <%= link_to new_user_fourth_test_path(@user) do %>
   <li class="col-sm-2">
    <h2>Cuarta Prueba</h2>
+           <% if current_user.admin? %>
+            <h5>Aún no hay pruebas para calificar</h5>
+           <% end %>
 </li>
 <% end %>
 <% else %>
@@ -138,7 +155,7 @@
   <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
   <h2>Cuarta Prueba</h2>
   <% if current_user.admin? %>
-  <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
+  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test) %>
   <% end %>
   <% if fourth_test.fourth_reviews.present? %>
   <% if current_user.admin? %>
@@ -164,6 +181,9 @@
 <%= link_to new_user_fourth_test_path(@user) do %>
 <li class="col-sm-2">
    <h2>Video</h2>
+           <% if current_user.admin? %>
+            <h5>Aún no hay pruebas para calificar</h5>
+           <% end %>
 </li>
 <% end %>
 <% else %>
@@ -172,7 +192,7 @@
   <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
   <h2>Video</h2>
   <% if current_user.admin? %>
-  <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
+  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test) %>
   <% end %>
   <% if fourth_test.fifth_reviews.present? %>
   <h3>Calificación de Video: </h3>
@@ -197,25 +217,28 @@
 <% if @user.fourth_tests.blank? %>
 <%= link_to new_user_fourth_test_path(@user) do %>
 <li class="col-sm-2">
-   <h2>Video</h2>
+   <h2>Pitch</h2>
+           <% if current_user.admin? %>
+            <h5>Aún no hay pruebas para calificar</h5>
+           <% end %>
 </li>
 <% end %>
 <% else %>
 <% @user.fourth_tests.each do |fourth_test| %>
 <li class="col-sm-2">
   <%= link_to edit_user_fourth_test_path(@user, fourth_test) do %>
-  <h2>Video</h2>
+  <h2>Pitch</h2>
   <% if current_user.admin? %>
-  <%= link_to "Show", user_fourth_test_path(@user, fourth_test) %>
+  <%= link_to "Calificar", user_fourth_test_path(@user, fourth_test) %>
   <% end %>
-  <% if fourth_test.fifth_reviews.present? %>
-  <h3>Calificación de Video: </h3>
-  <%= @l= fourth_test.fifth_reviews.average(:problem2).round(2) 
-  @m= fourth_test.fifth_reviews.average(:cliente2).round(2) 
-  @n= fourth_test.fifth_reviews.average(:propuesta2).round(2) 
-  @o= fourth_test.fifth_reviews.average(:ventajas2).round(2) 
-  @p= fourth_test.fifth_reviews.average(:monetizacion2).round(2) 
-  @q= fourth_test.fifth_reviews.average(:comunicacion2).round(2) 
+  <% if fourth_test.sixth_reviews.present? %>
+  <h3>Calificación de Pitch: </h3>
+  <%= @l= fourth_test.sixth_reviews.average(:problem3).round(2) 
+  @m= fourth_test.sixth_reviews.average(:cliente3).round(2) 
+  @n= fourth_test.sixth_reviews.average(:propuesta3).round(2) 
+  @o= fourth_test.sixth_reviews.average(:ventajas3).round(2) 
+  @p= fourth_test.sixth_reviews.average(:monetizacion3).round(2) 
+  @q= fourth_test.sixth_reviews.average(:comunicacion3).round(2) 
   @total4 = @l + @m + @n + @o + @p +@q %>
   <% else %>
   <td>No hay calificaciones</td>
@@ -240,5 +263,6 @@
 <%= @total + @total2 + @total3 + @total1 %>
 <% end %>
 
+<br>
 
 <%= link_to 'Back', users_path %>
