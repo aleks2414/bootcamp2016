@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.where(admin: false).order("team asc")
     @usera = User.where(id: current_user.id)
   end
 

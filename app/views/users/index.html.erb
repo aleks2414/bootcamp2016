@@ -1,3 +1,4 @@
+<% @total4 = 0 %><% @total5 = 0 %>
 <p id="notice"><%= notice %></p>
 
 <div class="container">
@@ -10,6 +11,33 @@
           <li class="col-sm-2">
           <h2>Equipo: <%= user.team %></h2>
           <%= link_to 'Ver prueba', user %>
+            <% user.fourth_tests.each do |fourth_test| %>
+              <% if fourth_test.fifth_reviews.present? %>
+                <h5>Calificación de Video: </h5>
+                  <%=  @l= fourth_test.fifth_reviews.average(:problem2).round(2) 
+                       @m= fourth_test.fifth_reviews.average(:cliente2).round(2) 
+                       @n= fourth_test.fifth_reviews.average(:propuesta2).round(2) 
+                       @o= fourth_test.fifth_reviews.average(:ventajas2).round(2) 
+                       @p= fourth_test.fifth_reviews.average(:monetizacion2).round(2) 
+                       @q= fourth_test.fifth_reviews.average(:comunicacion2).round(2) 
+                       @total4 = @l + @m + @n + @o + @p +@q %>
+                  <% else %>
+                  <td></td>
+                   <% end %>
+
+                   <% if fourth_test.sixth_reviews.present? %>
+                <h5>Calificación de Pitch: </h5>
+                  <%= @l= fourth_test.sixth_reviews.average(:problem3).round(2) 
+                      @m= fourth_test.sixth_reviews.average(:cliente3).round(2) 
+                      @n= fourth_test.sixth_reviews.average(:propuesta3).round(2) 
+                      @o= fourth_test.sixth_reviews.average(:ventajas3).round(2) 
+                      @p= fourth_test.sixth_reviews.average(:monetizacion3).round(2) 
+                      @q= fourth_test.sixth_reviews.average(:comunicacion3).round(2) 
+                      @total4 = @l + @m + @n + @o + @p +@q %>
+                  <% else %>
+                  <td></td>
+                  <% end %>
+            <% end %>
           </li>
           <% end %>
         <% else %>
