@@ -31,7 +31,6 @@
            <%= link_to new_user_first_test_path(@user) do %>
            <li class="col-sm-2">
                <h2>Primera Prueba</h2>
-               <h6><%= link_to "Descarga Formato de Reporte", '/reporte.xlsx' %></h6>
            <% if current_user.admin? %>
             <h5>Aún no hay pruebas para calificar</h5>
            <% end %>
@@ -42,7 +41,6 @@
            <li class="col-sm-2">
               <%= link_to edit_user_first_test_path(@user, first_test) do %>
               <h2>Primera Prueba</h2>
-              <h6><%= link_to "Descarga Formato de Reporte", '/reporte.xlsx' %></h6>
               <% if current_user.admin? %>
               <%= link_to "Calificar", user_first_test_path(@user, first_test) %>
               <% end %>
@@ -65,7 +63,6 @@
           <%= link_to new_user_second_test_path(@user) do %>
           <li class="col-sm-2">
            <h2>Segunda Prueba</h2>
-           <h6><%= link_to "Descarga Boceto de Idea", '/boceto_de_idea.pdf' %></h6>
            <% if current_user.admin? %>
             <h5>Aún no hay pruebas para calificar</h5>
            <% end %>
@@ -76,7 +73,6 @@
        <li class="col-sm-2">
           <%= link_to edit_user_second_test_path(@user, second_test) do %>
           <h2>Segunda Prueba</h2>
-          <h6><%= link_to "Descarga Boceto de Idea", '/boceto_de_idea.pdf' %></h6>
           <% if current_user.admin? %>
           <%= link_to "Calificar", user_second_test_path(@user, second_test) %>
           <% end %>
@@ -250,6 +246,12 @@
 </div>
 </div>
 </div>
+
+<div class="container">
+<h6><%= link_to "Descarga Formato de Reporte", '/reporte.xlsx' %></h6>
+<h6><%= link_to "Descarga Boceto de Idea", '/boceto_de_idea.pdf' %></h6>
+</div>
+
 
 <% if current_user.admin? %>
 <div class="col-sm-10 col-sm-offset-1">
